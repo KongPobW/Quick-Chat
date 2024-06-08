@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,6 +15,12 @@ function SignUp() {
         password: "",
         confirmPassword: "",
     });
+
+    useEffect(() => {
+        if (localStorage.getItem("chat-app-user")) {
+            navigate("/");
+        }
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
