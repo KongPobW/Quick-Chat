@@ -22,3 +22,19 @@ module.exports.signup = async (req, res, next) => {
         next(e);
     }
 };
+
+module.exports.signin = async (req, res, next) => {
+    try {
+        const { username, password } = req.body;
+        const user = await User.findOne({ username });
+        if (!user)
+            return res.json({ msg: "incorrect username", status: false });
+        const isCorrectPassword = await bcrypt.compare(password, user.password);
+        if (!isCorrectPassword)
+            return res.json({ msg: "incorrect password", status: false });
+        delete user.password;
+        return res.json({ status: true, user });
+    } catch (e) {
+        next(e);
+    }
+};
