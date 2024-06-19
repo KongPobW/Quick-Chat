@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AllUsersRoutes } from "../utils/APIRoutes";
 import Contact from "../components/Contact";
 import Welcome from "../components/Welcome";
+import ChatContainer from "../components/ChatContainer";
 
 function Chat() {
 
@@ -48,7 +49,7 @@ function Chat() {
         <div className="h-screen w-screen flex flex-col justify-center gap-4 items-center bg-[#131324]">
             <div className="h-[85vh] w-[85vw] bg-[#00000076] grid grid-cols-[25%,75%] custom-range:grid-cols-[35%,65%]">
                 <Contact contacts={contacts} user={user} changeChat={handleChangeChat} />
-                <Welcome />
+                {chat === undefined ? <Welcome /> : <ChatContainer currentChat={chat} />}
             </div>
         </div>
     );
