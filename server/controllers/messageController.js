@@ -23,4 +23,26 @@ module.exports.addMessage = async (req, res, next) => {
 };
 
 module.exports.getAllMessages = async (req, res, next) => {
+    try {
+
+        const { from, to } = req.body;
+
+        const messages = await Message.find({
+            users: {
+                $all: [from, to],
+            },
+        }).sort({ updatedAt: 1 });
+
+        const projectedMessages = messages.map((msg) => {
+            return {
+                fromSelf: msg.sender.toString() === from,
+                message: msg.message,
+            };
+        });
+
+        return res.json(projectedMessages);
+
+    } catch (e) {
+        next(e);
+    }
 };

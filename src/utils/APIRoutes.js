@@ -4,3 +4,4 @@ export const AvatarRoutes = "http://localhost:5000/api/auth/avatar";
 export const AllUsersRoutes = "http://localhost:5000/api/auth/allusers";
 
 export const SendMsgRoutes = "http://localhost:5000/api/message/addmsg";
+export const AllMsgRoutes = "http://localhost:5000/api/message/getmsg";
