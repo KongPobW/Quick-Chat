@@ -7,3 +7,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.username-contact {
+    --max-line: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-line);
+    word-wrap: break-word;
+}

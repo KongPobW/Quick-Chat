@@ -61,7 +61,7 @@ function ChatContainer({ currentChat, currentUser, socket }) {
     }, [messages]);
 
     return (
-        <div className="grid grid-rows-[10%,80%,10%] gap-[0.1rem] overflow-hidden custom-range:grid-rows-[15%,70%,15%]">
+        <div className="grid grid-rows-[10%,80%,10%] gap-[0.1rem] overflow-hidden cr-md:grid-rows-[15%,70%,15%]">
             <div className="flex justify-between items-center px-8">
                 <div className="flex items-center gap-4">
                     <img className="h-[3rem]" src={`data:image/svg+xml;base64,${currentChat.avatarImage}`} />
@@ -76,7 +76,7 @@ function ChatContainer({ currentChat, currentUser, socket }) {
                     return (
                         <div ref={scrollRef} key={uuidv4()}>
                             <div className={`flex items-center ${message.fromSelf ? "flex justify-end" : "flex justify-start"}`}>
-                                <div className={`max-w-[40%] p-4 text-lg rounded-xl text-gray-300 custom-range:max-w-[70%] ${message.fromSelf ? "bg-[#4f04ff21]" : "bg-[#9900ff20]"}`}>
+                                <div className={`max-w-[40%] p-4 text-lg rounded-xl text-gray-300 cr-md:max-w-[70%] ${message.fromSelf ? "bg-[#4f04ff21]" : "bg-[#9900ff20]"}`}>
                                     <p>{message.message}</p>
                                 </div>
                             </div>

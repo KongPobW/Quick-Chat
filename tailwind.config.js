@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "custom-range": { "min": "720px", "max": "1080px" },
+        "cr-sm": { "min": "600px", "max": "720px" },
+        "cr-md": { "min": "720px", "max": "1080px" },
       },
     },
   },

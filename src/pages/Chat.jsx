@@ -56,7 +56,7 @@ function Chat() {
 
     return (
         <div className="h-screen w-screen flex flex-col justify-center gap-4 items-center bg-[#131324]">
-            <div className="h-[85vh] w-[85vw] bg-[#00000076] grid grid-cols-[25%,75%] custom-range:grid-cols-[35%,65%]">
+            <div className="h-[85vh] w-[85vw] bg-[#00000076] grid grid-cols-[25%,75%] cr-md:grid-cols-[35%,65%]">
                 <Contact contacts={contacts} user={user} changeChat={handleChangeChat} />
                 {chat === undefined ? <Welcome /> : <ChatContainer currentChat={chat} currentUser={user} socket={socket} />}
             </div>
