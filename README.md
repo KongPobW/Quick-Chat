@@ -36,13 +36,23 @@ This will install all the necessary packages and libraries required to run the p
 
 ### Running the Project
 
-Once you have installed the dependencies, you can start the project by running:
+Once you have installed the dependencies, navigate to the server folder by running the following command in your terminal:
 
-```shell
-npm start
-```
+   ```shell
+   cd server
+   ```
 
-This command will start the development server and make the application available locally.
+Next, start the server by running:
+
+   ```shell
+   npm start
+   ```
+
+Finally, start the project in the main folder by running:
+
+   ```shell
+   npm start
+   ```
 
 ## Usage
 
